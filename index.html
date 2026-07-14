@@ -1,18 +1,94 @@
-<nav class="navbar">
-  <a href="index.html" class="active">หน้าหลัก</a>
-  <a href="about.html">ประวัติ</a>
-  <a href="education.html">การศึกษา</a>
-  <a href="projects.html">ผลงาน</a>
-  <a href="contact.html">ติดต่อ</a>
-</nav>
-<div class="hero-section">
-  <h1>สวัสดีค่ะ นางสาว มนัสวรรณ จิตสว่าง</h1>
-  <p>ยินดีต้อนรับสู่เว็บ Portfolio ยื่นเข้าศึกษาต่อ</p>
-  <a href="about.html" class="btn">รู้จักฉันเพิ่ม</a>
-</div>
-<div class="skill-item">
-  <span>HTML / CSS & Javascript</span>
-  <div class="progress">
-    <div class="fill" style="width: 85%"></div>
-  </div>
-</div>
+/* รีเซ็ตค่าเริ่มต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f3ff; /* สีพื้นหลังม่วงอ่อนมากๆ */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* แถบเมนู (Navigation Bar) */
+nav {
+    background-color: #ffffff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.05); /* เงาสีม่วงจางๆ */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6d28d9; /* สีม่วงหลัก (Purple) */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #6d28d9;
+    border-bottom: 2px solid #6d28d9;
+    padding-bottom: 5px;
+}
+
+/* ส่วนเนื้อหาหลัก */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: #4c1d95; /* สีม่วงเข้มมากสำหรับหัวข้อ */
+}
+
+/* ส่วนท้ายเว็บ (Footer) */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #4c1d95; /* ม่วงเข้ม */
+    color: #f3e8ff;
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+/* ปุ่มกดสไตล์สีม่วง */
+.btn {
+    display: inline-block;
+    background-color: #6d28d9;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 30px; /* ขอบมนสวยงาม */
+    font-weight: bold;
+    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.3);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #5b21b6;
+    transform: translateY(-2px); /* ลอยขึ้นเล็กน้อยตอนชี้ */
+}
