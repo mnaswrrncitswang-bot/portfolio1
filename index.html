@@ -92,3 +92,289 @@ footer {
     background-color: #5b21b6;
     transform: translateY(-2px); /* ลอยขึ้นเล็กน้อยตอนชี้ */
 }
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าหลัก | My Purple Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 60px 0; gap: 40px; }
+        .hero-text { flex: 1; }
+        .hero-img { flex: 1; text-align: right; }
+        .hero-img img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 8px solid #ddd6fe; }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-img { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html" class="active">หน้าหลัก</a></li>
+            <li><a href="about.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="projects.html">ผลงาน</a></li>
+            <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>สวัสดีครับ/ค่ะ ยินดีต้อนรับสู่พอร์ตโฟลิโอสีม่วงของฉัน</h1>
+                <p style="font-size: 18px; color: #4b5563; margin-bottom: 30px;">
+                    ฉันเป็นนักเรียนชั้น ม.6 ที่กำลังพัฒนาทักษะและเตรียมพร้อมก้าวสู่มหาวิทยาลัยในคณะ [ใส่ชื่อคณะที่อยากเข้า เช่น คณะวิศวกรรมศาสตร์ / คณะวิทยาศาสตร์] เว็บไซต์นี้รวบรวมตัวตนและผลงานทั้งหมดของฉันไว้ครับ
+                </p>
+                <a href="projects.html" class="btn">คลิกเพื่อดูผลงาน</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://via.placeholder.com/320/6d28d9/ffffff?text=My+Photo" alt="รูปภาพโปรไฟล์">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติส่วนตัว | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .info-box { background: white; padding: 30px; border-radius: 16px; border-left: 5px solid #6d28d9; margin-bottom: 30px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-card { background: #ede9fe; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #ddd6fe; }
+        .skill-card h3 { color: #6d28d9; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html" class="active">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="projects.html">ผลงาน</a></li>
+            <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>ประวัติส่วนตัว (About Me)</h2>
+        <div class="info-box">
+            <p><strong>ชื่อ-นามสกุล:</strong> [ระบุชื่อของคุณ]</p>
+            <p><strong>ชื่อเล่น:</strong> [ระบุชื่อเล่น] | <strong>อายุ:</strong> 18 ปี</p>
+            <p><strong>แผนการเรียน:</strong> [ระบุแผนการเรียน เช่น วิทย์-คณิต / ศิลป์-คำนวณ]</p>
+            <p><strong>ความสามารถพิเศษ:</strong> [เช่น เขียนโปรแกรมเบื้องต้น, ตัดต่อวิดีโอ, กราฟิกดีไซน์]</p>
+        </div>
+        
+        <h2>ทักษะความสามารถ (Skills)</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><h3>HTML / CSS</h3><p>ระดับพื้นฐาน-กลาง</p></div>
+            <div class="skill-card"><h3>GitHub Pages</h3><p>ใช้งานสร้างเว็บได้</p></div>
+            <div class="skill-card"><h3>Photoshop / Canva</h3><p>ออกแบบงานกราฟิก</p></div>
+            <div class="skill-card"><h3>Teamwork</h3><p>การทำงานร่วมกับผู้อื่น</p></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการศึกษา | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timeline { margin-top: 30px; border-left: 4px solid #a78bfa; padding-left: 25px; }
+        .timeline-item { position: relative; margin-bottom: 40px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .timeline-item::before { content: ""; position: absolute; left: -34px; top: 24px; width: 14px; height: 14px; background: #6d28d9; border: 3px solid #fff; border-radius: 50%; }
+        .timeline-year { font-weight: bold; color: #6d28d9; font-size: 18px; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html" class="active">ประวัติการศึกษา</a></li>
+            <li><a href="projects.html">ผลงาน</a></li>
+            <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>ประวัติการศึกษา (Education)</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">พ.ศ. 2567 - ปัจจุบัน</div>
+                <h3>ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h3>
+                <p><strong>โรงเรียน:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
+                <p><strong>เกรดเฉลี่ยสะสม (GPAX):</strong> X.XX</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">พ.ศ. 2564 - 2566</div>
+                <h3>ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</h3>
+                <p><strong>โรงเรียน:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
+                <p><strong>เกรดเฉลี่ยสะสม:</strong> X.XX</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานและกิจกรรม | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .project-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(109, 40, 217, 0.05); border: 1px solid #f3e8ff; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(109, 40, 217, 0.1); }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        .project-content { padding: 20px; }
+        .project-tag { display: inline-block; background: #f3e8ff; color: #6d28d9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="projects.html" class="active">ผลงาน</a></li>
+            <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>ผลงานและกิจกรรม (Projects & Activities)</h2>
+        <p>รวมโครงงานและกิจกรรมเด่นที่ภาคภูมิใจในระดับมัธยมปลาย</p>
+        
+        <div class="projects-grid">
+            <!-- การ์ดชิ้นที่ 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Project+1" alt="รูปผลงาน 1">
+                <div class="project-content">
+                    <span class="project-tag">Coding & Web</span>
+                    <h3>ระบบพอร์ตโฟลิโอออนไลน์</h3>
+                    <p>สร้างเว็บไซต์นี้ขึ้นมาด้วยการเขียนโค้ด HTML/CSS ด้วยตนเอง และเรียนรู้การ Deployment ผ่าน GitHub Pages</p>
+                </div>
+            </div>
+            
+            <!-- การ์ดชิ้นที่ 2 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200/a78bfa/ffffff?text=Project+2" alt="รูปผลงาน 2">
+                <div class="project-content">
+                    <span class="project-tag">Science Project</span>
+                    <h3>โครงงาน/สิ่งประดิษฐ์โรงเรียน</h3>
+                    <p>อธิบายโครงงานที่เคยทำร่วมกับเพื่อนในห้องเรียน หน้าที่ที่ได้รับมอบหมาย และผลลัพธ์ที่ได้จากโครงงาน</p>
+                </div>
+            </div>
+
+            <!-- การ์ดชิ้นที่ 3 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200/c084fc/ffffff?text=Project+3" alt="รูปผลงาน 3">
+                <div class="project-content">
+                    <span class="project-tag">Activity</span>
+                    <h3>การเข้าร่วมค่าย/จิตอาสา</h3>
+                    <p>บันทึกการเข้าร่วมกิจกรรมภายนอก เช่น ค่ายเปิดบ้านมหาวิทยาลัย ค่ายติววิชาการ หรือกิจกรรมบำเพ็ญประโยชน์</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ช่องทางการติดต่อ | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(109, 40, 217, 0.05); max-width: 600px; margin: 40px auto; text-align: left; border: 1px solid #f3e8ff; }
+        .contact-item { margin-bottom: 25px; font-size: 18px; display: flex; align-items: center; }
+        .contact-label { width: 120px; font-weight: bold; color: #6d28d9; }
+        .contact-item a { color: #333; text-decoration: none; border-bottom: 2px solid #ddd6fe; transition: 0.2s; }
+        .contact-item a:hover { color: #6d28d9; border-color: #6d28d9; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="projects.html">ผลงาน</a></li>
+            <li><a href="contact.html" class="active">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="text-align: center;">
+        <h2>ช่องทางการติดต่อ (Contact Me)</h2>
+        <p>สามารถติดต่อหรือดูซอร์สโค้ดโปรเจกต์เพิ่มเติมได้ตามช่องทางด้านล่างนี้เลยครับ/ค่ะ</p>
+        
+        <div class="contact-card">
+            <div class="contact-item">
+                <span class="contact-label">📧 Email:</span>
+                <a href="mailto:your.email@gmail.com">your.email@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">📞 Tel:</span>
+                <span>09X-XXX-XXXX</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">🐱 GitHub:</span>
+                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">📸 Instagram:</span>
+                <a href="https://instagram.com/your_ig" target="_blank">@your_ig</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
