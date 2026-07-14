@@ -3,100 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าหลัก | My Purple Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio | นักเรียน ม.6</title>
+    <!-- Google Fonts: Sarabun (ฟอนต์ภาษาไทยที่ดูเป็นทางการและทันสมัย) -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome สำหรับ Icon สวยๆ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .hero { display: flex; align-items: center; justify-content: space-between; padding: 60px 0; gap: 40px; }
-        .hero-text { flex: 1; }
-        .hero-img { flex: 1; text-align: right; }
-        .hero-img img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 8px solid #ddd6fe; }
+        /* --- 1. Global Styles & Theme (Pastel Pink) --- */
+        :root {
+            --primary-pink: #FFD1DC;      /* ชมพูพาสเทลหลัก */
+            --light-pink: #FFF0F2;        /* ชมพูอ่อนมากสำหรับพื้นหลัง */
+            --dark-pink: #FF9AA2;         /* ชมพูเข้มสำหรับปุ่มหรือจุดเน้น */
+            --text-color: #5D4A4D;        /* สีตัวอักษรน้ำตาลเข้มเทาๆ เพื่อให้อ่านง่ายกว่าสีดำ */
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+            scroll-behavior: smooth; /* ทำให้เวลาคลิกเมนูแล้วเลื่อนนุ่มนวล */
+        }
+
+        body {
+            background-color: var(--light-pink);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- 2. Navigation Bar --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 240, 242, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-pink);
+        }
+
+        /* --- 3. Section Styles --- */
+        section {
+            padding: 100px 20px 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--dark-pink);
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-pink);
+            border-radius: 2px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(255, 154, 162, 0.15);
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        /* --- 4. Page 1: Home (หน้าหลัก) --- */
+        #home {
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--primary-pink);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-pink);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #ff858f;
+        }
+
+        /* --- 5. Page 2: About Me (ประวัติส่วนตัว) --- */
+        .about-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        .about-info h3 {
+            margin-bottom: 15px;
+            color: var(--dark-pink);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .info-list strong {
+            color: var(--dark-pink);
+        }
+
+        /* --- 6. Page 3: Education (ประวัติการศึกษา) --- */
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            border-left: 5px solid var(--dark-pink);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--dark-pink);
+            margin-bottom: 5px;
+        }
+
+        /* --- 7. Page 4: Portfolio/Activities (ผลงานหรือกิจกรรม) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .portfolio-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 180px;
+            background-color: var(--primary-pink); /* ใส่รูปจริงแทนที่ตรงนี้ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .portfolio-content {
+            padding: 20px;
+        }
+
+        .portfolio-content h4 {
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        /* --- 8. Page 5: Contact (ช่องทางการติดต่อ) --- */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--white);
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--dark-pink);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-pink);
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; }
-            .hero-img { text-align: center; }
+            .nav-links {
+                display: none; /* เพื่อความง่ายในหน้าเดียว สามารถทำเบอร์เกอร์เมนูเพิ่มได้ภายหลัง */
+            }
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">My Portfolio</div>
-        <ul>
-            <li><a href="index.html" class="active">หน้าหลัก</a></li>
-            <li><a href="about.html">ประวัติส่วนตัว</a></li>
-            <li><a href="education.html">ประวัติการศึกษา</a></li>
-            <li><a href="projects.html">ผลงาน</a></li>
-            <li><a href="contact.html">ติดต่อ</a></li>
-        </ul>
-    </nav>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">MyPortfolio</a>
+            <ul class="nav-links">
+                <li><a href="#home">หน้าหลัก</a></li>
+                <li><a href="#about">ประวัติส่วนตัว</a></li>
+                <li><a href="#education">ประวัติการศึกษา</a></li>
+                <li><a href="#portfolio">ผลงาน/กิจกรรม</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
-        <section class="hero">
-            <div class="hero-text">
-                <h1>สวัสดีครับ/ค่ะ ยินดีต้อนรับสู่พอร์ตโฟลิโอสีม่วงของฉัน</h1>
-                <p style="font-size: 18px; color: #4b5563; margin-bottom: 30px;">
-                    ฉันเป็นนักเรียนชั้น ม.6 ที่กำลังพัฒนาทักษะและเตรียมพร้อมก้าวสู่มหาวิทยาลัยในคณะ [ใส่ชื่อคณะที่อยากเข้า เช่น คณะวิศวกรรมศาสตร์ / คณะวิทยาศาสตร์] เว็บไซต์นี้รวบรวมตัวตนและผลงานทั้งหมดของฉันไว้ครับ
-                </p>
-                <a href="projects.html" class="btn">คลิกเพื่อดูผลงาน</a>
-            </div>
-            <div class="hero-img">
-                <img src="https://via.placeholder.com/320/6d28d9/ffffff?text=My+Photo" alt="รูปภาพโปรไฟล์">
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติส่วนตัว | My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .info-box { background: white; padding: 30px; border-radius: 16px; border-left: 5px solid #6d28d9; margin-bottom: 30px; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .skill-card { background: #ede9fe; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #ddd6fe; }
-        .skill-card h3 { color: #6d28d9; margin-bottom: 5px; }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">My Portfolio</div>
-        <ul>
-            <li><a href="index.html">หน้าหลัก</a></li>
-            <li><a href="about.html" class="active">ประวัติส่วนตัว</a></li>
-            <li><a href="education.html">ประวัติการศึกษา</a></li>
-            <li><a href="projects.html">ผลงาน</a></li>
-            <li><a href="contact.html">ติดต่อ</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h2>ประวัติส่วนตัว (About Me)</h2>
-        <div class="info-box">
-            <p><strong>ชื่อ-นามสกุล:</strong> [ระบุชื่อของคุณ]</p>
-            <p><strong>ชื่อเล่น:</strong> [ระบุชื่อเล่น] | <strong>อายุ:</strong> 18 ปี</p>
-            <p><strong>แผนการเรียน:</strong> [ระบุแผนการเรียน เช่น วิทย์-คณิต / ศิลป์-คำนวณ]</p>
-            <p><strong>ความสามารถพิเศษ:</strong> [เช่น เขียนโปรแกรมเบื้องต้น, ตัดต่อวิดีโอ, กราฟิกดีไซน์]</p>
+    <!-- 1. หน้าหลัก (Home) -->
+    <section id="home">
+        <!-- ใส่รูปภาพของตัวเองตรง src -->
+        <img src="https://via.placeholder.com/180" alt="Profile Picture" class="hero-img">
+        <div class="hero-text">
+            <h1>สวัสดีค่ะ/ครับ ยินดีต้อนรับ</h1>
+            <p>เว็ปไซต์ Portfolio รวบรวมผลงานและประวัติของนักเรียน ม.6</p>
+            <a href="#about" class="btn">ทำความรู้จักกันเลย <i class="fa-solid fa-arrow-down"></i></a>
         </div>
-        
-        <h2>ทักษะความสามารถ (Skills)</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><h3>HTML / CSS</h3><p>ระดับพื้นฐาน-กลาง</p></div>
-            <div class="skill-card"><h3>GitHub Pages</h3><p>ใช้งานสร้างเว็บได้</p></div>
-            <div class="skill-card"><h3>Photoshop / Canva</h3><p>ออกแบบงานกราฟิก</p></div>
-            <div class="skill-card"><h3>Teamwork</h3><p>การทำงานร่วมกับผู้อื่น</p></div>
-        </div>
-    </div>
+    </section>
 
+    <!-- 2. ประวัติส่วนตัว (About) -->
+    <section id="about" style="background-color: #FFF5F7;">
+        <h2 class="section-title">ประวัติส่วนตัว</h2>
+        <div class="card">
+            <div class="about-container">
+                <div class="about-info">
+                    <h3>ข้อมูลทั่วไป</h3>
+                    <ul class="info-list">
+                        <li><strong>ชื่อ-นามสกุล:</strong> [ชื่อของคุณ] [นามสกุลของคุณ]</li>
+                        <li><strong>ชื่อเล่น:</strong> [ชื่อเล่น]</li>
+                        <li><strong>วันเกิด:</strong> [วัน เดือน ปีเกิด]</li>
+                        <li><strong>แผนการเรียน:</strong> [เช่น วิทย์-คณิต / ศิลป์-คำนวณ]</li>
+                        <li><strong>ความสนใจ:</strong> [เช่น การเขียนโปรแกรม, ออกแบบกราฟิก, ถ่ายภาพ]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ประวัติการศึกษา (Education) -->
+    <section id="education">
+        <h2 class="section-title">ประวัติการศึกษา</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">พ.ศ. 2567 - ปัจจุบัน</div>
+                <h4>มัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h4>
+                <p>โรงเรียน: [ใส่ชื่อโรงเรียนของคุณ]</p>
+                <p>เกรดเฉลี่ยสะสม (GPAX): [ใส่เกรด เช่น 3.80]</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">พ.ศ. 2564 - 2566</div>
+                <h4>มัธยมศึกษาตอนต้น (ม.1 - ม.3)</h4>
+                <p>โรงเรียน: [ใส่ชื่อโรงเรียนของคุณ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ผลงานหรือกิจกรรม (Portfolio) -->
+    <section id="portfolio" style="background-color: #FFF5F7;">
+        <h2 class="section-title">ผลงานและกิจกรรม</h2>
+        <div class="grid-container">
+            <!-- ชิ้นงานที่ 1 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">[ รูปภาพผลงาน 1 ]</div>
+                <div class="portfolio-content">
+                    <h4>กิจกรรม/ผลงานที่ 1</h4>
+                    <p>คำอธิบายสั้นๆ เกี่ยวกับผลงานหรือรางวัลที่ได้รับจากการแข่งขัน</p>
+                </div>
+            </div>
+            <!-- ชิ้นงานที่ 2 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">[ รูปภาพผลงาน 2 ]</div>
+                <div class="portfolio-content">
+                    <h4>กิจกรรม/ผลงานที่ 2</h4>
+                    <p>กิจกรรมค่ายวิชาการ หรือการเป็นประธาน/ส่วนร่วมในงานโรงเรียน</p>
+                </div>
+            </div>
+            <!-- ชิ้นงานที่ 3 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">[ รูปภาพผลงาน 3 ]</div>
+                <div class="portfolio-content">
+                    <h4>กิจกรรม/ผลงานที่ 3</h4>
+                    <p>โครงงานวิทยาศาสตร์ หรือเว็บไซต์ที่เคยร่วมพัฒนา</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ช่องทางการติดต่อ (Contact) -->
+    <section id="contact">
+        <h2 class="section-title">ช่องทางการติดต่อ</h2>
+        <div class="card" style="text-align: center;">
+            <p style="margin-bottom: 20px; font-size: 1.1rem;">สามารถติดต่อหรือติดตามผลงานของฉันได้ผ่านช่องทางด้านล่างนี้เลยค่ะ/ครับ</p>
+            <div class="contact-links">
+                <!-- Facebook -->
+                <a href="https://facebook.com/yourprofile" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/yourprofile" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <!-- Email -->
+                <a href="mailto:your.email@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/yourusername" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 Portfolio by ม.6 Student. All Rights Reserved.</p>
+        <p>&copy; 2026 Designed by [ชื่อของคุณ]. All Rights Reserved.</p>
     </footer>
 
 </body>
